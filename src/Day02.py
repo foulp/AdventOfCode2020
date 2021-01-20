@@ -23,4 +23,4 @@ if __name__ == '__main__':
     passwords = [extract_pwd(pw) for pw in passwords]
 
     print(f"The result of first star is {sum(map(lambda x: is_pwd_valid(x, 'first'), passwords))}")
-    print(f"The result of first star is {sum(map(lambda x: is_pwd_valid(x, 'second'), passwords))}")
+    print(f"The result of second star is {sum(map(lambda x: is_pwd_valid(x, 'second'), passwords))}")
