@@ -29,9 +29,11 @@ class HandheldGameConsole:
             method = getattr(self, operation)
             method(int(value))
 
+            # Case normal ending
             if self.pointer >= len(self.instructions):
                 return True, self.accumulator
 
+        # Case infinite loop
         return False, self.accumulator
 
     def decorrupt(self):
@@ -43,9 +45,9 @@ class HandheldGameConsole:
                     self.instructions[i][0] = 'jmp'
                 is_finite, acc = self.run()
                 self.instructions[i][0] = op
+                self.clean()
                 if is_finite:
                     return acc
-                self.clean()
 
 
 if __name__ == '__main__':
