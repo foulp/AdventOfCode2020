@@ -184,8 +184,8 @@ if __name__ == '__main__':
     regex = fr'[0\n1]{"{"}{grid_shape * tiles_shape[1] + 1 - 20}{"}"}'.join(regex)
     regex_length = 2 * (grid_shape * tiles_shape[1] + 1 - 20) + 60
 
-    for _ in range(4):
-        for _ in range(2):
+    for _ in range(2):
+        for _ in range(4):
             string_grid = '\n'.join(''.join(line.astype(str)) for line in grid)
             match = [re.match(regex, string_grid[i: i+regex_length]) is not None for i in range(len(string_grid) - regex_length + 1)]
             if sum(match):
